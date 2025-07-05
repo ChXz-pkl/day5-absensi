@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Absensi ChX</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .button-group {
+      margin: 20px 0;
+    }
+
+    a {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 5px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    a.secondary {
+      background-color: #2196F3;
+    }
+
+    table {
+      margin: 0 auto;
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 700px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .late {
+      color: red;
+      font-weight: bold;
+    }
+
+    .on-time {
+      color: green;
+      font-weight: bold;
+    }
+
+    .alasan-badge {
+      font-style: italic;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      width: 100%;
+      margin: 15px auto;
+      padding: 0 10px;
+    }
+
+
+    .filter-bar select {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      background-color: #fff;
+      color: #333;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    .filter-bar select:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      table {
+        font-size: 14px;
+      }
+
+      a {
+        width: 100%;
+        display: block;
+      }
+
+      .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .filter-bar select {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Selamat Datang di Sistem Absensi</h1>
+  <p>Silakan login untuk melakukan absensi atau melihat dashboard.</p>
+
+  <div class="button-group">
+    <a href="login-page.html">Login</a>
+    <a href="register.html" class="secondary">Daftar Akun Baru</a>
+  </div>
+
+  <h2>Rekap Absen Terbaru</h2>
+
+  <div class="filter-bar" style="margin: 10px 0;">
+    <select id="filterNama">
+      <option value="all">Semua Nama</option>
+    </select>
+
+    <select id="filterAlasan">
+      <option value="all">Semua Alasan</option>
+      <option value="Hadir">Hadir</option>
+      <option value="Izin">Izin</option>
+      <option value="Sakit">Sakit</option>
+      <option value="Bolos">Bolos</option>
+    </select>
+  </div>
+
+
+  <h2>Rekap Absen Terbaru</h2>
+  <div class="table-wrapper">
+    <table id="absenTable">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Waktu</th>
+          <th>Status</th>
+          <th>Alasan</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script type="module" src="javascript/index.js"></script>
+</body>
+
+</html>
